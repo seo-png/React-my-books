@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Home() {
+export default function NotFound() {
   return (
     <div>
-      <h1>Home</h1>
+      <h1>NotFound</h1>
     </div>)
 }
