@@ -6,9 +6,12 @@ import Add from './pages/Add';
 import Detail from './pages/Detail';
 import Edit from './pages/Edit';
 import NotFound from './pages/NotFound';
+import Error from './pages/Error';
+import { ErrorBoundary } from 'react-error-boundary';
 function App() {
   return (
-  <BrowserRouter>
+  <ErrorBoundary FallbackComponent={Error}>
+    <BrowserRouter>
     <Routes>
       <Route path="/edit/:id" element={ <Edit /> }/>
       <Route path="/book/:id" element={ <Detail /> }/>
@@ -20,6 +23,8 @@ function App() {
       <Route path="/*" element={ <NotFound /> }/>
     </Routes>
   </BrowserRouter>
+  </ErrorBoundary>
+  
   );
 }
 
