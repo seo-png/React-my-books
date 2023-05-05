@@ -17,7 +17,7 @@ function App() {
 
       <Route path="/signin" element={ <Signin /> }/>
       <Route path="/" element={ <Home /> }/>
-      <Route element={ <NotFound /> }/>
+      <Route path="/*" element={ <NotFound /> }/>
     </Routes>
   </BrowserRouter>
   );
