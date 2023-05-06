@@ -1,5 +1,4 @@
-import { stat } from "fs";
-import { createAction, createActions, handleActions } from "redux-actions";
+import { createActions, handleActions } from "redux-actions";
 
 interface AuthState {
   token: string | null;
