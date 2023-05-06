@@ -1,9 +1,9 @@
-import { Button, Col, Row } from "antd";
-import Input from "rc-input";
+import { Col, Row, Button, Input } from "antd";
+import styles from './Signin.module.css'
 
 export default function Signin() {
   return (
-    <Row align="middle">
+    <Row align="middle" className={styles.signin_row}>
       <Col span={24}>
         <Row>
           <Col span={12}></Col>
