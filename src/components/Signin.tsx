@@ -5,34 +5,36 @@ export default function Signin() {
   return (
     <Row align="middle" className={styles.signin_row}>
       <Col span={24}>
-        <Row>
+        <Row className={styles.signin_contents}>
           <Col span={12}></Col>
           <Col span={12}>
-            <div>My Books</div>
-            <div>Please Note Your Opinion</div>
-            <div />
-            <div>
+            <div className={styles.signin_title}>My Books</div>
+            <div className={styles.signin_subtitle}>Please Note Your Opinion</div>
+            <div className={styles.signin_underline} />
+            <div className={styles.email_title}>
               Email
-              <span> *</span>
+              <span className={styles.required}> *</span>
             </div>
-            <div>
+            <div className={styles.input_area}>
               <Input
                 placeholder="Email"
                 autoComplete="email"
-                name="email" />
+                name="email"
+                className={styles.input} />
             </div>
-            <div>
+            <div className={styles.password_title}>
               Password
-              <span> *</span>
+              <span className={styles.required}> *</span>
             </div>
-            <div>
+            <div className={styles.input_area}>
               <Input
                 type="password"
                 autoComplete="current-password"
-                name="email" />
+                name="email"
+                className={styles.input} />
             </div>
-            <div>
-              <Button size="large">Sign In</Button>
+            <div className={styles.button_area}>
+              <Button size="large" className={styles.button}>Sign In</Button>
             </div>
           </Col>
         </Row>
