@@ -1,7 +1,13 @@
 import { Col, Row, Button, Input } from "antd";
+import type { InputRef } from 'antd';
+import { useRef } from "react";
 import styles from './Signin.module.css'
 
 export default function Signin() {
+
+  const emailRef = useRef<InputRef>(null);
+  const passwordRef = useRef<InputRef>(null);
+
   return (
     <Row align="middle" className={styles.signin_row}>
       <Col span={24}>
@@ -22,7 +28,8 @@ export default function Signin() {
                 placeholder="Email"
                 autoComplete="email"
                 name="email"
-                className={styles.input} />
+                className={styles.input}
+                ref={emailRef} />
             </div>
             <div className={styles.password_title}>
               Password
@@ -32,8 +39,8 @@ export default function Signin() {
               <Input
                 type="password"
                 autoComplete="current-password"
-                name="email"
-                className={styles.input} />
+                className={styles.input}
+                ref={passwordRef}  />
             </div>
             <div className={styles.button_area}>
               <Button size="large" className={styles.button}>Sign In</Button>
