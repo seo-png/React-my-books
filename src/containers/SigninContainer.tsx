@@ -1,5 +1,14 @@
+import { useCallback } from "react";
+import { useDispatch } from "react-redux";
 import Signin from "../components/Signin";
+import { login as loginSagaStart } from '../redux/modules/auth'
 
 export default function SigninContainer() {
-  return <Signin />
+
+  const dispatch = useDispatch();
+
+  const login = useCallback((reqData: any) => {
+    dispatch(loginSagaStart(reqData));
+  }, [dispatch]);
+  return <Signin login={login} />
 }

@@ -2,8 +2,14 @@ import { Col, Row, Button, Input } from "antd";
 import type { InputRef } from 'antd';
 import { useRef } from "react";
 import styles from './Signin.module.css'
+import { LoginReqType } from '../types';
 
-export default function Signin() {
+
+interface SigninProps {
+  login: (reqData: LoginReqType) => void;
+}
+
+const Signin: React.FC<SigninProps> = ({login}) => {
 
   const emailRef = useRef<InputRef>(null);
   const passwordRef = useRef<InputRef>(null);
@@ -43,11 +49,24 @@ export default function Signin() {
                 ref={passwordRef}  />
             </div>
             <div className={styles.button_area}>
-              <Button size="large" className={styles.button}>Sign In</Button>
+              <Button 
+                size="large" 
+                className={styles.button}
+                onClick={click}>Sign In</Button>
             </div>
           </Col>
         </Row>
       </Col>
     </Row>
-  )
+  );
+  
+  function click() {
+   
+    const email = emailRef.current!.input!.value;
+    const password = emailRef.current!.input!.value;
+
+    login({ email, password })
+  }
 }
+
+export default Signin
